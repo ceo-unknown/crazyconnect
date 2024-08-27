@@ -15,12 +15,12 @@ const TopNav = () => {
           </Link>
         </span>
         <span className="nav-item mx-3">
-          <Link className="nav-link active" href={"/"}>
+          <Link className="nav-link active" href={"/search"}>
             Search
           </Link>
         </span>
         <span className="nav-item mx-3">
-          <Link className="nav-link active" href={"/"}>
+          <Link className="nav-link active" href={"/add-post"}>
             Add
           </Link>
         </span>
