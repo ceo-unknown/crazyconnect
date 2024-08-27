@@ -4,7 +4,7 @@ import ProfileHeader from "./ProfileHeader";
 const ProfileCard = () => {
   return (
     <>
-      <Card>
+      <Card className="sticky-top">
         <CardBody>
           <ProfileHeader />
         </CardBody>

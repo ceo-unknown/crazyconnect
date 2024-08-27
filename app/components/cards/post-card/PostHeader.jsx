@@ -11,7 +11,7 @@ const cardHeaderImgStyle = {
   padding: "10px",
 };
 
-const PostHeader = () => {
+const PostHeader = ({ userName }) => {
   return (
     <>
       <CardHeader className="p-1">
@@ -21,7 +21,7 @@ const PostHeader = () => {
             alt="no image"
             style={cardHeaderImgStyle}
           />
-          <CardText className="mb-0">user name</CardText>
+          <CardText className="mb-0 fw-light">{userName}</CardText>
           <Button>...</Button>
         </Flex>
       </CardHeader>

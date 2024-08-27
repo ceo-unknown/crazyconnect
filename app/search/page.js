@@ -5,45 +5,8 @@ import Button from "../components/css/Button";
 import Flex from "../components/css/Flex";
 import ImageGrid from "../components/css/ImageGrid";
 import Col from "../components/css/Col";
-
-// image data
-
-const imgData = [
-  {
-    id: 1,
-    imgSrc:
-      "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2023/10/Nuveksha-2.jpg",
-    alt: "",
-  },
-  {
-    id: 2,
-    imgSrc:
-      "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2023/10/Nuveksha-1.jpg",
-    alt: "",
-  },
-  {
-    id: 3,
-    imgSrc:
-      "https://www.mixindia.com/wp-content/uploads/2022/06/Nuveksha-Photos-3.jpg",
-    alt: "",
-  },
-  {
-    id: 4,
-    imgSrc: "https://pbs.twimg.com/media/GEnt_ZjbUAAuKAV?format=jpg&name=large",
-    alt: "",
-  },
-  {
-    id: 5,
-    imgSrc: "https://pbs.twimg.com/media/GEnt__qbIAA98Ba?format=jpg&name=large",
-    alt: "",
-  },
-  {
-    id: 6,
-    imgSrc:
-      "https://cdn.gulte.com/wp-content/uploads/2023/10/Yukti-Thareja-2.jpg",
-    alt: "",
-  },
-];
+import { imgData } from "../dummyData";
+import Spinner from "../components/css/Spinner";
 
 // image grid css
 const imageGridStyle = {
@@ -54,6 +17,8 @@ const gridImageStyle = {
   width: "100%",
   height: "100%",
 };
+// overflow css
+const scrollStyle = {};
 
 const Search = () => {
   return (
@@ -63,24 +28,28 @@ const Search = () => {
           <CardBody>
             <Input type={"text"} placeholder={"search..."} />
             <Flex className="justify-content-end">
-              <Button className="btn-primary btn-sm ">search</Button>
+              <Button className="btn-outline-secondary ">search</Button>
             </Flex>
           </CardBody>
         </Card>
         <Col className="col-lg-6">
           <Card>
             <CardHeader>filters</CardHeader>
-            <CardBody>
+            <CardBody style={scrollStyle} className="p-1">
               <ImageGrid style={imageGridStyle}>
-                {imgData.map((img) => (
-                  <CardImg
-                    src={img.imgSrc}
-                    alt="no image"
-                    key={img.id}
-                    className="object-fit"
-                    style={gridImageStyle}
-                  />
-                ))}
+                {imgData ? (
+                  imgData.map((img) => (
+                    <CardImg
+                      src={img.imgSrc}
+                      alt="no image"
+                      key={img.id}
+                      className="object-fit"
+                      style={gridImageStyle}
+                    />
+                  ))
+                ) : (
+                  <Spinner />
+                )}
               </ImageGrid>
             </CardBody>
           </Card>

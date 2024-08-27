@@ -4,8 +4,12 @@ export function Card({ children, className = "" }) {
 export function CardHeader({ children, className = "" }) {
   return <div className={`card-header ${className}`}>{children}</div>;
 }
-export function CardBody({ children, className = "" }) {
-  return <div className={`card-body ${className}`}>{children}</div>;
+export function CardBody({ children, className = "", style = {} }) {
+  return (
+    <div className={`card-body ${className}`} style={style}>
+      {children}
+    </div>
+  );
 }
 export function CardTittle({ children, className = "" }) {
   return <h5 className={`card-title ${className}`}>{children}</h5>;

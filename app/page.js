@@ -13,7 +13,6 @@ export default function Home() {
         </Col>
         <Col className="col-12 col-md-8 col-lg-5">
           <PostCard />
-          <PostCard />
         </Col>
         <Col className="d-none d-lg-block col-lg-4">
           <TrendCard />

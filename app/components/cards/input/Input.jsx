@@ -3,7 +3,7 @@ import React from "react";
 const Input = ({ type, placeholder, className = "", label }) => {
   return (
     <>
-      <div className="mb-3">
+      <div className="mb-2">
         <label className="form-label">{label}</label>
         <input
           type={type}

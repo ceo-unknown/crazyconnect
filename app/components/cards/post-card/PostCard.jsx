@@ -4,20 +4,28 @@ import PostHeader from "./PostHeader.jsx";
 import PostImage from "./PostImage.jsx";
 import PostDescription from "./PostDescription.jsx";
 import PostFooter from "./PostFooter.jsx";
+import { imgData } from "@/app/dummyData.js";
+import Spinner from "../../css/Spinner.jsx";
 
 const PostCard = () => {
   return (
     <>
-      <Card className="mb-2">
-        <PostHeader />
-        <CardBody className="p-0">
-          <PostImage />
-          <PostDescription />
-        </CardBody>
-        <CardFooter className="p-0">
-          <PostFooter />
-        </CardFooter>
-      </Card>
+      {imgData ? (
+        imgData.map((img) => (
+          <Card className="mb-2">
+            <PostHeader userName={"nuveshka"} />
+            <CardBody className="p-0">
+              <PostImage src={img.imgSrc} />
+              {/* <PostDescription /> */}
+            </CardBody>
+            <CardFooter className="p-0">
+              <PostFooter />
+            </CardFooter>
+          </Card>
+        ))
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 };
