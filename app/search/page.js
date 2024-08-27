@@ -4,6 +4,7 @@ import Input from "../components/cards/input/Input";
 import Button from "../components/css/Button";
 import Flex from "../components/css/Flex";
 import ImageGrid from "../components/css/ImageGrid";
+import Col from "../components/css/Col";
 
 // image data
 
@@ -49,37 +50,42 @@ const imageGridStyle = {
   gridTemplateColumns: "repeat(3,1fr)",
   gap: 5,
 };
+const gridImageStyle = {
+  width: "100%",
+  height: "100%",
+};
 
 const Search = () => {
   return (
     <>
-      <Card className="mb-2">
-        <CardBody>
-          <Input
-            type={"text"}
-            placeholder={"search..."}
-            className="form-control-lg"
-          />
-          <Flex className="justify-content-end">
-            <Button className="btn-primary btn-sm ">search</Button>
-          </Flex>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardHeader>filters</CardHeader>
-        <CardBody>
-          <ImageGrid style={imageGridStyle}>
-            {imgData.map((img) => (
-              <CardImg
-                src={img.imgSrc}
-                alt="no image"
-                key={img.id}
-                className="object-fit w-100 h-100"
-              />
-            ))}
-          </ImageGrid>
-        </CardBody>
-      </Card>
+      <Flex className="flex-column  align-items-lg-center">
+        <Card className="mb-2 col-lg-6 ">
+          <CardBody>
+            <Input type={"text"} placeholder={"search..."} />
+            <Flex className="justify-content-end">
+              <Button className="btn-primary btn-sm ">search</Button>
+            </Flex>
+          </CardBody>
+        </Card>
+        <Col className="col-lg-6">
+          <Card>
+            <CardHeader>filters</CardHeader>
+            <CardBody>
+              <ImageGrid style={imageGridStyle}>
+                {imgData.map((img) => (
+                  <CardImg
+                    src={img.imgSrc}
+                    alt="no image"
+                    key={img.id}
+                    className="object-fit"
+                    style={gridImageStyle}
+                  />
+                ))}
+              </ImageGrid>
+            </CardBody>
+          </Card>
+        </Col>
+      </Flex>
     </>
   );
 };
