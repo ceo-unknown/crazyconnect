@@ -24,7 +24,11 @@ const PostCard = () => {
           </Card>
         ))
       ) : (
-        <Spinner />
+        <Card>
+          <CardBody>
+            <Spinner />
+          </CardBody>
+        </Card>
       )}
     </>
   );

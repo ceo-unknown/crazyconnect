@@ -4,6 +4,7 @@ import ProfileImageGrid from "./ProfileImageGrid";
 import Flex from "../components/css/Flex";
 import Col from "../components/css/Col";
 import Row from "../components/css/Row";
+import { imgData } from "../dummyData";
 
 const Profile = () => {
   return (
@@ -13,7 +14,7 @@ const Profile = () => {
           <ProfileCard />
         </Col>
         <Col className="col-12 col-md-8 col-lg-8 ">
-          <ProfileImageGrid />
+          <ProfileImageGrid imgData={imgData} />
         </Col>
       </Row>
     </>

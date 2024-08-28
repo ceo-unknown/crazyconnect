@@ -1,7 +1,11 @@
 import React from "react";
 
-const Flex = ({ children, className = "" }) => {
-  return <div className={`d-flex ${className}`}>{children}</div>;
+const Flex = ({ children, className = "", style = {} }) => {
+  return (
+    <div className={`d-flex ${className}`} style={style}>
+      {children}
+    </div>
+  );
 };
 
 export default Flex;

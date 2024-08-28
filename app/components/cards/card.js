@@ -37,3 +37,4 @@ export function CardImg({
 export function CardFooter({ children, className = "" }) {
   return <div className={`card-footer ${className}`}>{children}</div>;
 }
+export function CardLoader() {}

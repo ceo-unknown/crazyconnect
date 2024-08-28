@@ -1,9 +1,10 @@
-import React from "react";
+"use client";
 import ImageGrid from "../components/css/ImageGrid";
 import { Card, CardBody, CardImg } from "../components/cards/card";
-import { imgData } from "../dummyData";
 import Spinner from "../components/css/Spinner";
 import SkeltonLoader from "../components/css/SkeltonLoader";
+import { useState } from "react";
+import Flex from "../components/css/Flex";
 
 // image grid css
 const imageGridStyle = {
@@ -14,28 +15,40 @@ const gridImageStyle = {
   width: "100%",
   height: "100%",
 };
-const ProfileImageGrid = () => {
+const ProfileImageGrid = ({ imgData }) => {
+  // loading state
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  if (!imgData) {
+    setLoading(true);
+  }
+  const loaderStyle = {
+    height: `400px`,
+  };
+
   return (
     <Card>
       <CardBody className="p-1">
-        <ImageGrid style={imageGridStyle}>
-          {imgData ? (
-            imgData.map((img) =>
-              img.imgSrc ? (
-                <CardImg
-                  src={img.imgSrc}
-                  key={img.id}
-                  alt="no image"
-                  style={gridImageStyle}
-                />
-              ) : (
-                <SkeltonLoader />
-              )
-            )
-          ) : (
-            <Spinner />
-          )}
-        </ImageGrid>
+        {loading ? (
+          <Flex
+            className="justify-content-center align-items-center h-100"
+            style={loaderStyle}
+          >
+            <SkeltonLoader />
+          </Flex>
+        ) : (
+          <ImageGrid style={imageGridStyle}>
+            {imgData.map((img) => (
+              <CardImg
+                src={img.imgSrc}
+                key={img.id}
+                alt="no image"
+                style={gridImageStyle}
+              />
+            ))}{" "}
+          </ImageGrid>
+        )}
       </CardBody>
     </Card>
   );
