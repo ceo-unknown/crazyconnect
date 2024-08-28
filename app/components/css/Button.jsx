@@ -1,10 +1,23 @@
 import React from "react";
 
-const Button = ({ children, className = "", style = {} }) => {
+const Button = ({
+  children,
+  className = "",
+  style = {},
+  type = "",
+  onClick,
+}) => {
   return (
-    <button style={style} className={`btn ${className}`}>
-      {children}
-    </button>
+    <>
+      <button
+        type={type}
+        style={style}
+        className={`btn ${className}`}
+        onClick={() => onClick}
+      >
+        {children}
+      </button>
+    </>
   );
 };
 

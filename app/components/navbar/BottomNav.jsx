@@ -4,8 +4,8 @@ import { TbHome, TbPlus, TbSearch, TbUser, TbUserCircle } from "react-icons/tb";
 
 const BottomNav = () => {
   return (
-    <div className="fixed-bottom d-lg-none">
-      <Flex className="bg-body-tertiary p-2 py-3 justify-content-between ">
+    <div className="container fixed-bottom d-lg-none px-0">
+      <Flex className="bg-body-tertiary p-3  justify-content-between ">
         <Link className="nav-link" href={"/"}>
           <TbHome size={24} />
         </Link>
