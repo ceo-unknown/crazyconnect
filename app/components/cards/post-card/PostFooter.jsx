@@ -5,7 +5,7 @@ import React from "react";
 const PostFooter = () => {
   return (
     <>
-      <Flex className={`justify-content-between`}>
+      <Flex className={`justify-content-between py-2`}>
         <Button>like</Button>
         <Button>comment</Button>
         <Button>share</Button>

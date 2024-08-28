@@ -4,9 +4,9 @@ import Flex from "../css/Flex";
 
 const TopNav = () => {
   return (
-    <nav className="navbar bg-body-tertiary mb-2">
+    <nav className="navbar bg-body-tertiary mb-2 ">
       <Link className="navbar-brand" href={"/"}>
-        Crazy Connect
+        CrazyConnect
       </Link>
       <Flex className="d-none d-lg-inline-flex">
         <span className="nav-item mx-3">

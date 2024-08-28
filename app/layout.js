@@ -16,8 +16,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-bs-theme="dark">
       <body className={inter.className}>
+        <TopNav />
         <Container>
-          <TopNav />
           {children}
           <BottomNav />
         </Container>
